@@ -38,4 +38,3 @@ Underside: sprint
 ## Opgaver
 - installer Bootstrap
 - opsæt HTML til Bootstrap
-- 
