@@ -1,1 +1,43 @@
-test crap
+body{
+  background-color:white;
+}
+#container{
+}
+
+#header{
+  height:70px;
+  width:100%;
+  Background-color: green;
+}
+
+#content{
+
+}
+
+
+
+
+/* menu koden */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
