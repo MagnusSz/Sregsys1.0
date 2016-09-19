@@ -6,7 +6,7 @@ var data = {
   projects: projects,
   projectName: "",
   activeProject: Object.keys(projects)[0],
-  productBacklog: {userStories:[]},
+  productBacklog: {backlogUrl:"", userStories:[]},
   sprints: [],
 }
 // Nu instantierer vi ractive. Vi giver den en reference til det element vi gerne vil have tegnet vores brugergrænse flade i som en css selector, reference til vores template, vi antager at vi er i en ny browser så vi kan godt bruge magic mode (http://docs.ractivejs.org/latest/magic-mode) og til sidst giver vi ractive vores data objekt.
@@ -40,7 +40,7 @@ ractive.on({
     var projectName = e.target.value;
     // Vi putter et nyt project in i data.projects
     var projects = data.projects;
-    projects[projectName] = {projectName: e.target.value, projectBacklog: [], sprints:{}};
+    projects[projectName] = {projectName: e.target.value, productBacklog: {backlogUrl:"test",userStories:["Get Shit Done", "Get Shit To Work"]}, sprints:{}};
     // Pga. en teknikalitet i Ractive bliver vi nødt til at sætte dataen eksplicit nu for at det slår igennem
     ractive.set("projects", projects);
     // Vi sætter activeBoard til det nye board
@@ -49,5 +49,19 @@ ractive.on({
     projectManager.store(data.projects);
     // Tilsidst rydder vi inputfeltet
     e.target.value = "";
+  },
+
+  "creatUserstory": function ( event ) {
+    var e = event.original;
+    // Vi laver et nyt noteobjekt
+    var newUserstory = {text: "", id: boardManager.guid()};
+    // Putter noten ind i listen af notes på det active board
+    data.projects[data.activeProject].productBacklog.userStories.push(newUserstory);
+    // Gemmer dataen
+    projectManager.store(data.projects);
+    // Sætter den nye note til at skulle editeres
+    data.editedNote = newUserstory.id;
+    // Finder DOM elementet for textareaet i den nye note og giver det fokus
+    document.querySelector('div[data-id="'+newUserstory.id+'"]').querySelector("textarea").focus();
   },
 });
