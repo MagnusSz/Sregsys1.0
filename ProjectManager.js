@@ -13,7 +13,7 @@ projectManager.store = function(projects) {
 
 //Denne funktion henter alle applikationernes projekter ud fra JSONStorage
 projectManager.getProjects = function() {
-  var projects = (jsonStorage.getItem("project1")) || {default: {projectBacklog: {}, sprints[]}});
+  var projects = (jsonStorage.getItem("project1") || {default: {projectBacklog: []}});
   return projects;
 }
 
