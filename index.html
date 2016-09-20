@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
-  <title>SregSys 1.0</title>
+      <title>SregSys 1.0</title>
     <script src="miniREST.js" charset="utf-8"></script>
-  <script src="ProjectManager.js" charset="utf-8"></script>
-  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+    <script src="ProjectManager.js" charset="utf-8"></script>
+    <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
   </head>
   <body>
 <div id="container">
@@ -21,6 +21,14 @@
 <div id="content">
   <!-- Dette er templaten som benyttes til at tegne brugergrænsefladen -->
   <script id="main" type="text/ractive">
+<div class="sprints">
+<select value={{activeSprint}}>
+  {{! For at generere options løber vi boards igennem og laver en per board}}
+    {{#sprints:i}}
+      <option value={{i}}>{{id}}</option>
+    {{/sprints}}
+  </select>
+</div>
 
 <div class="tasks">
   <table class="taskTable">
@@ -29,20 +37,21 @@
     <th> Task desription </th>
     <th> Task estimated time </th>
     <th> Task completed ? </th>
-    </tr>
-    <tr>
+  </tr>
    {{#sprints[activeSprint]}}
      {{#tasks:i}}
-      <td> {{task}} test </td>
-      <td> test </td>
-      <td> test </td>
-      <td> test </td>
+     <tr data-id="{{i}}">
+      <td> {{tasks[i].id}}</td>
+      <td> {{tasks[i].desription}}</td>
+      <td> {{tasks[i].estimatedTime}} </td>
+      <td> {{tasks[i].completed}} </td>
+    </tr>
     {{/tasks}}
   {{/sprints}}
-    </tr>
   </table>
 </div>
-/*  <div id="controls">
+
+<!--  <div id="controls">
   <select value={{activeProject}}>
     {{#projects:i}}
       <option value={{i}}>{{i}}</option>
@@ -67,7 +76,7 @@
         <p>{{projects[activeProject].productBacklog.userStories}}</p>
       </div>
   {{/activeProject}}
-  </div> */
+  </div> -->
 
 
 
