@@ -1,5 +1,17 @@
 #Sprint Backlog
 
+## Sprint 2 (20-09-16 til 27-09-16)
+- Opsætning af db.json
+- Omskrivning af main.js, projectManager.js, index.html så det passer til db.json
+- Opsæt miniREST.js
+
+### Funktioner
+- Oprette et task (desription, etimatedTime, completed)
+- Udskrive alle tasks
+- udskrive alle færdige tasks
+- udskrive alle igangværende tasks
+- vælge en sprint til en task (opdatere objektet)
+
 ## Sprint 1 (13-09-16 til 20-09-16)
 
 ### Opsætning af site
