@@ -1,37 +1,31 @@
 {
-  "board": [
+  "sprint": [
     {
-      "id": "default",
-      "notes": [
-        "a",
-        "723e3db5-83bd-2827-e9ae-59315c158fff"
-      ]
-    },
-    {
-      "id": "todos",
-      "notes": []
-    },
-    {
-      "id": "wishlist",
-      "notes": []
+      "id": "defaultSprint",
+      "estimatedTime": 0,
+      "timeSpend": 0,
+      "completed": false,
+      "tasks": []
     }
   ],
-  "note": [
+  "task": [
     {
-      "id": "a",
-      "content": "Welcome to NoteIt 0.4!",
-      "position": {
-        "x": 181,
-        "y": 91
-      }
+      "id": "defaultTask",
+      "description": "Faa REST til at virke",
+      "estimatedTime": 0,
+      "completed": false
     },
     {
-      "content": "Wow!!! this is cool!\n",
-      "position": {
-        "x": 593,
-        "y": 138
-      },
-      "id": "723e3db5-83bd-2827-e9ae-59315c158fff"
+      "id": "defaultTask1",
+      "description": "Faa REST til at virke1",
+      "estimatedTime": 0,
+      "completed": false
+    },
+    {
+      "id": "defaultTask2",
+      "description": "Faa REST til at virke2",
+      "estimatedTime": 0,
+      "completed": false
     }
   ]
 }
