@@ -30,19 +30,17 @@
     <th> Task estimated time </th>
     <th> Task completed ? </th>
     </tr>
+    {{#tasks:i}}
     <tr>
-   {{#sprints[activeSprint]}}
-     {{#tasks:i}}
-      <td> {{task}} test </td>
-      <td> test </td>
-      <td> test </td>
-      <td> test </td>
-    {{/tasks}}
-  {{/sprints}}
+     <td> {{id}} </td>
+     <td> {{description}} </td>
+     <td> {{estimatedTime}} </td>
+     <td> {{completed}} </td>
     </tr>
+   {{/tasks}}
   </table>
 </div>
-/*  <div id="controls">
+<!--  <div id="controls">
   <select value={{activeProject}}>
     {{#projects:i}}
       <option value={{i}}>{{i}}</option>
@@ -67,7 +65,7 @@
         <p>{{projects[activeProject].productBacklog.userStories}}</p>
       </div>
   {{/activeProject}}
-  </div> */
+  </div> -->
 
 
 
