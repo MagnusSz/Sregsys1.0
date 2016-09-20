@@ -6,10 +6,10 @@ Clemens Nylandsted Klokmose, 2016
 // Vi starter med at hive vores boards ud fra serveren
 // NB. her giver vi en anonym funktion med som der kaldes tilbage på
 // Dette gør vi fordi kaldet til serveren er asynkront!
-boardManager.getSprints(function(sprints) {
+sprintManager.getSprints(function(sprints) {
 
     // Nu laver vi et data objekt til ractive som består af boards, et activeBoard som vi sætter til at være det første i listen, og editedNote som holder styr på hvilken note der editeres.
-    var data = {sprints: sprints, activeSprint: 0, tasks: tasks};
+    var data = {sprints: sprints, activeSprint: 0, tasks: []};
     // Nu instantierer vi ractive. Vi giver den en reference til det element vi gerne vil have tegnet vores brugergrænse flade i som en css selector, reference til vores template, vi antager at vi er i en ny browser så vi kan godt bruge magic mode (http://docs.ractivejs.org/latest/magic-mode) og til sidst giver vi ractive vores data objekt.
     var ractive = new Ractive({
         el: '#content',

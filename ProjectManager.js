@@ -11,7 +11,7 @@ var sprintManager = {
 // Get boards skaber et objekt med alle boards og alle deres tilknyttede noter.
 // Dette kræver to kald til serveren, først et der henter boards ud, og et der henter notes ud.
 // Den dobbelte for-løkke fylder noterne ind som et objekt i et givent board
-sprintManager.getSprint = function(callback) {
+sprintManager.getSprints = function(callback) {
     // Hent noter ud (asynkront kald, derfor gives en callback function med)
     miniREST.get(sprintManager.host+"/sprint", function(sprints) {
         // Noter hentes ud når boards er hentet
