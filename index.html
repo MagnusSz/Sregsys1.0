@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
   <title>SregSys 1.0</title>
-  <script src="JSONStorage.js" type="text/javascript"></script>
+    <script src="miniREST.js" charset="utf-8"></script>
   <script src="ProjectManager.js" charset="utf-8"></script>
   <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
   </head>
@@ -19,11 +19,30 @@
 </div>
 
 <div id="content">
-  <h2> dette er en test </h2>
   <!-- Dette er templaten som benyttes til at tegne brugergrænsefladen -->
   <script id="main" type="text/ractive">
 
-  <div id="controls">
+<div class="tasks">
+  <table class="taskTable">
+   <tr>
+    <th> Task ID </th>
+    <th> Task desription </th>
+    <th> Task estimated time </th>
+    <th> Task completed ? </th>
+    </tr>
+    <tr>
+   {{#sprints[activeSprint]}}
+     {{#tasks:i}}
+      <td> {{task}} test </td>
+      <td> test </td>
+      <td> test </td>
+      <td> test </td>
+    {{/tasks}}
+  {{/sprints}}
+    </tr>
+  </table>
+</div>
+/*  <div id="controls">
   <select value={{activeProject}}>
     {{#projects:i}}
       <option value={{i}}>{{i}}</option>
@@ -48,7 +67,7 @@
         <p>{{projects[activeProject].productBacklog.userStories}}</p>
       </div>
   {{/activeProject}}
-  </div>
+  </div> */
 
 
 
