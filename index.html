@@ -3,32 +3,56 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css">
       <title>SregSys 1.0</title>
     <script src="miniREST.js" charset="utf-8"></script>
     <script src="ProjectManager.js" charset="utf-8"></script>
     <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+    <script src="js/bootstrap.js" charset="utf-8"></script>
   </head>
   <body>
-<div id="container">
-<div id="header">
-  <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="productBacklog.html">Product backlog</a></li>
-  <li><a href="sprints.html">Sprints</a></li>
-</ul>
-</div>
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/"> Sregsys 1.0 </a>
+      </div>
+      <div class="">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productBacklog.html">Product backlog</a></li>
+          <li><a href="sprints.html">Sprints</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
-<div id="content">
+<main>
+    <section class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <h1> Velkommen til SregSys 1.0 </h2>
+        <h2> Et Scrum Registrerings System </h2>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <p> Gå til dit projekt her! </p>
+        <button class="btn btn-primary"> Kom igang </button>
+      </div>
+    </section>
+ <br />  <br />  <br />  <br />  <br />
+    <div id="container">
+      <div id="content">
   <!-- Dette er templaten som benyttes til at tegne brugergrænsefladen -->
-  <script id="main" type="text/ractive">
-<div class="sprints">
-<select value={{activeSprint}}>
-  {{! For at generere options løber vi boards igennem og laver en per board}}
-    {{#sprints:i}}
-      <option value={{i}}>{{id}}</option>
-    {{/sprints}}
-  </select>
-</div>
+        <script id="main" type="text/ractive">
+          <div class="sprints">
+            <select value={{activeSprint}}>
+              {{! For at generere options løber vi boards igennem og laver en per board}}
+                {{#sprints:i}}
+                  <option value={{i}}>{{id}}</option>
+                {{/sprints}}
+            </select>
+          </div>
 
 <div class="tasks">
   <table class="taskTable">
@@ -72,8 +96,8 @@
   </select>
 
   <input placeholder="Nyt projekt" on-keypress="newproject"/>
+      </div>
 
-  </div>
 
 
   <div class="project">
@@ -96,9 +120,12 @@
   </script>
 
   <script src="main.js" charset="utf-8"></script>
+    </div>
 </div>
-</div>
+</main>
+<footer class="footer">
+<p style="text-align:center;"> Eksamens projekt for Asger Storebjerg () og Magnus Szatkowski (201307890) </p>
+</footer>
 
-
-  </body>
+</body>
 </html>

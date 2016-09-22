@@ -3,7 +3,15 @@ body{
 }
 #container{
 }
-
+.footer{
+display: table;
+color: white;
+padding-top: 10px;
+margin-top: 200px;
+width: 100%;
+background: #333;
+}
+/*
 #header{
   height:70px;
   width:100%;
@@ -17,7 +25,7 @@ body{
 
 
 
-/* menu koden */
+ menu koden
 ul {
     list-style-type: none;
     margin: 0;
@@ -41,3 +49,4 @@ li a {
 li a:hover {
     background-color: #111;
 }
+*/
