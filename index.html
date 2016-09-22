@@ -40,7 +40,7 @@
   </tr>
    {{#sprints[activeSprint]}}
      {{#tasks:i}}
-     <tr data-id="{{i}}">
+  <tr data-id="{{i}}">
       <td> {{tasks[i].id}}</td>
       <td> {{tasks[i].desription}}</td>
       <td> {{tasks[i].estimatedTime}} </td>
@@ -48,6 +48,19 @@
     </tr>
     {{/tasks}}
   {{/sprints}}
+  </table>
+
+<h2> TEST 2 (gennem gang af tasks) </h2>
+<table>
+    {{#tasks:i}}
+
+    <tr>
+     <td> {{id}} </td>
+     <td> {{description}} </td>
+     <td> {{estimatedTime}} </td>
+     <td> {{completed}} </td>
+    </tr>
+   {{/tasks}}
   </table>
 </div>
 

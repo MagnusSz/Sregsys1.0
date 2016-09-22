@@ -37,6 +37,13 @@ sprintManager.getSprints = function(callback) {
     });
 };
 
+sprintManager.getTasks= function(callback) {
+    // Hent noter ud (asynkront kald, derfor gives en callback function med)
+    miniREST.get(sprintManager.host+"/task", function(tasks) {
+          callback(tasks);
+        });
+};
+
 // Her henter vi et specifikt board ud
 sprintManager.getSprint = function(id, callback) {
     miniREST.get(sprintManager.host+"/sprint/"+id, function(sprint) {

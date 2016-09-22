@@ -1,3 +1,4 @@
+
 {
   "sprint": [
     {
@@ -13,17 +14,24 @@
       "timeSpend": 0,
       "completed": false,
       "tasks": ["defaultTask","defaultTask1"]
-    }
+    },
+    {
+      "id": "ny sprint",
+      "estimatedTime": 0,
+      "timeSpend": 0,
+      "completed": false,
+      "tasks": []
+    },
   ],
   "task": [
     {
       "id": "defaultTask",
-      "description": "Faa REST til at virke",
+      "description": "Default task description",
       "estimatedTime": 0,
       "completed": false
     },
     {
-      "id": "defaultTask1",
+      "id": "Kom i mål med denne sprint",
       "description": "Faa REST til at virke1",
       "estimatedTime": 0,
       "completed": false
