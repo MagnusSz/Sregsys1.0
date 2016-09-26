@@ -3,20 +3,103 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <title>Product Backlog </title>
-    <script src="main.js" type="text/javascript"></script>
-    <script src="JSONStorage.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css">
+      <title>Product Backlog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="miniREST.js" charset="utf-8"></script>
     <script src="ProjectManager.js" charset="utf-8"></script>
     <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+    <script src="js/bootstrap.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="header">
-      <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="productBacklog.html">Product backlog</a></li>
-      <li><a href="sprints.html">Sprints</a></li>
-    </ul>
+
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/"> Sregsys 1.0 </a>
+      </div>
+      <div class="">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productBacklog.html">Product backlog</a></li>
+          <li><a href="sprints.html">Sprints</a></li>
+        </ul>
+      </div>
     </div>
-    <h1>This is where you see your product backloh</h1>
-  </body>
+  </nav>
+</header>
+
+<main class="container pb-container">
+  <section class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h1> Product Backlog : [Indsæt ProduktNavn] </h2>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <input class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+      </input>
+      <button class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3"> Tilføj </button>
+    </div>
+  </section>
+  <section class="row">
+    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <tr>
+        <th> Vælg </th>
+        <th> Beskrivelse </th>
+        <th> Sprint </th>
+      </tr>
+      <tr>
+        <td> <form action="#"> <input type="checkbox" name="vælg"> </form> </td>
+        <td> Her kommer der beskrivelse af en opgave </td>
+        <td> <select> <option value="Sprint 1"> Sprint 1 </option> <option value="Sprint 2"> Sprint 2 </option> </select>
+      </tr>
+      <tr>
+        <td> <form action="#"> <input type="checkbox" name="vælg"> </form> </td>
+        <td> Her kommer der beskrivelse af en opgave </td>
+        <td> <select> <option value="Sprint 1"> Sprint 1 </option> <option value="Sprint 2"> Sprint 2 </option> </select>
+      </tr>
+    </table>
+  </section>
+  <section class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <button class="btn btn-info"> Rediger </button>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+       <button class="btn btn-danger"> Slet </button>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <button class="btn btn-success"> Tilføj til Sprint </button>
+    </div>
+  </section>
+  <hr>
+  <section class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h2> Gennemførte opgaver </h2>
+    </div>
+  </section>
+  <section class="row">
+    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <tr>
+        <th> Gennemført </th>
+        <th> Beskrivelse </th>
+        <th> Hvilken Sprint </th>
+      </tr>
+      <tr>
+        <td> <form action="#"> <input type="checkbox" name="vælg" checked> </form> </td>
+        <td> Her kommer der beskrivelse af en opgave </td>
+        <td> Sprint 1 </select>
+      </tr>
+      <tr>
+        <td> <form action="#"> <input type="checkbox" name="vælg" checked> </form> </td>
+        <td> Her kommer der beskrivelse af en opgave </td>
+        <td> Sprint 2 </select>
+      </tr>
+    </table>
+  </section>
+</main>
+
+</body>
 </html>
