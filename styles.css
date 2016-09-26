@@ -19,6 +19,15 @@ background: #333;
   background: lightgrey;
 }
 
+.sidebar-bg {
+    background: lightgrey;
+    padding:25px !important;
+}
+
+.sidebar-main-bg {
+  background: grey;
+  padding-bottom:25px !important;
+}
 /*
 #header{
   height:70px;

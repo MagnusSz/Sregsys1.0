@@ -37,44 +37,53 @@
       <h1> Product Backlog : [Indsæt ProduktNavn] </h2>
     </div>
   </section>
+
+  <!--input-->
   <section class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <input class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+      <input class="col-lg-9 col-md-9 col-sm-9 col-xs-9" placeholder="Skriv en opgave her...">
       </input>
       <button class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3"> Tilføj </button>
     </div>
   </section>
+
+  <!-- Aktive Tasks -->
   <section class="row">
-    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="content">
+      <script id="main" type="text/ractive">
       <tr>
         <th> Vælg </th>
         <th> Beskrivelse </th>
+        <th> Estimeret tid </th>
         <th> Sprint </th>
       </tr>
+      {{#tasks:i}}
       <tr>
-        <td> <form action="#"> <input type="checkbox" name="vælg"> </form> </td>
-        <td> Her kommer der beskrivelse af en opgave </td>
-        <td> <select> <option value="Sprint 1"> Sprint 1 </option> <option value="Sprint 2"> Sprint 2 </option> </select>
+       <td> <form action="#"> <input type="checkbox" name="vælg"> </form> </td>
+       <td> {{description}} </td>
+       <td> {{estimatedTime}} </td>
+       <td> <select> <option value="Sprint 1"> Sprint 1 </option> <option value="Sprint 2"> Sprint 2 </option> </select> </td>
       </tr>
-      <tr>
-        <td> <form action="#"> <input type="checkbox" name="vælg"> </form> </td>
-        <td> Her kommer der beskrivelse af en opgave </td>
-        <td> <select> <option value="Sprint 1"> Sprint 1 </option> <option value="Sprint 2"> Sprint 2 </option> </select>
-      </tr>
+     {{/tasks}}
+     </script>
     </table>
   </section>
+
+  <!-- muligheder -->
   <section class="row">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <button class="btn btn-info"> Rediger </button>
+      <button class="btn btn-block btn-info"> Rediger </button>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-       <button class="btn btn-danger"> Slet </button>
+       <button class="btn btn-block btn-danger"> Slet </button>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <button class="btn btn-success"> Tilføj til Sprint </button>
+      <button class="btn btn-block btn-success"> Tilføj til Sprint </button>
     </div>
   </section>
   <hr>
+
+  <!-- Gennemførte opgaver -->
   <section class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <h2> Gennemførte opgaver </h2>
@@ -100,6 +109,12 @@
     </table>
   </section>
 </main>
+
+<script src="main.js" charset="utf-8"></script>
+
+<footer class="footer">
+<p style="text-align:center;"> Eksamens projekt for Asger Storebjerg () og Magnus Szatkowski (201307890) </p>
+</footer>
 
 </body>
 </html>
