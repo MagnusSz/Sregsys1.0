@@ -12,7 +12,9 @@
     <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
     <script src="js/bootstrap.js" charset="utf-8"></script>
   </head>
-  <body>
+
+<body>
+
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -30,7 +32,7 @@
   </nav>
 </header>
 
-<main>
+<main class="container">
     <section class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h1> Velkommen til SregSys 1.0 </h2>
@@ -38,94 +40,14 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <p> Gå til dit projekt her! </p>
-        <button class="btn btn-primary"> <a href="productBacklog.html">Kom igang </a></button>
+        <a href="productBacklog.html"><button class="btn btn-primary">Kom igang </button></a>
       </div>
     </section>
- <br />  <br />  <br />  <br />  <br />
-    <div id="container">
-      <div id="content">
-  <!-- Dette er templaten som benyttes til at tegne brugergrænsefladen -->
-        <script id="main" type="text/ractive">
-          <div class="sprints">
-            <select value={{activeSprint}}>
-              {{! For at generere options løber vi boards igennem og laver en per board}}
-                {{#sprints:i}}
-                  <option value={{i}}>{{id}}</option>
-                {{/sprints}}
-            </select>
-          </div>
-
-<div class="tasks">
-  <table class="taskTable">
-   <tr>
-    <th> Task ID </th>
-    <th> Task desription </th>
-    <th> Task estimated time </th>
-    <th> Task completed ? </th>
-  </tr>
-   {{#sprints[activeSprint]}}
-     {{#tasks:i}}
-  <tr data-id="{{i}}">
-      <td> {{tasks[i].id}}</td>
-      <td> {{tasks[i].desription}}</td>
-      <td> {{tasks[i].estimatedTime}} </td>
-      <td> {{tasks[i].completed}} </td>
-    </tr>
-    {{/tasks}}
-  {{/sprints}}
-  </table>
-
-<h2> TEST 2 (gennem gang af tasks) </h2>
-<table>
-    {{#tasks:i}}
-
-    <tr>
-     <td> {{id}} </td>
-     <td> {{description}} </td>
-     <td> {{estimatedTime}} </td>
-     <td> {{completed}} </td>
-    </tr>
-   {{/tasks}}
-  </table>
-</div>
-
-<!--  <div id="controls">
-  <select value={{activeProject}}>
-    {{#projects:i}}
-      <option value={{i}}>{{i}}</option>
-    {{/projects}}
-  </select>
-
-  <input placeholder="Nyt projekt" on-keypress="newproject"/>
-      </div>
-
-
-
-  <div class="project">
-  {{! Vi er kun interesseret i at vise det aktive board}}
-  {{#projects[activeProject]}}
-    {{! For det aktive board løber vi alle notes igennem}}
-      {{! For hver note lave vi en div med klasse note og hiver style og data-id ud fra noteobjektet. Vi installere også et par muselyttere}}
-      <div  data-id="{{id}}" >
-        <h2> Velkommen til {{projects[activeProject].projectName}} </h2>
-        <div>
-        <p> URL til dette projekt er {{projects[activeProject].productBacklog.backlogUrl}}</p>
-        <p>Dette projekt har {{projects[activeProject].productBacklog.userStories.length}} userStories</p>
-        <p>{{projects[activeProject].productBacklog.userStories}}</p>
-      </div>
-  {{/activeProject}}
-  </div> -->
-
-
-
-  </script>
 
   <script src="main.js" charset="utf-8"></script>
-    </div>
-</div>
 </main>
 <footer class="footer">
-<p style="text-align:center;"> Eksamens projekt for Asger Storebjerg () og Magnus Szatkowski (201307890) </p>
+<p style="text-align:center;"> Eksamens projekt for Asger Storebjerg (201307896) og Magnus Szatkowski (201307890) </p>
 </footer>
 
 </body>

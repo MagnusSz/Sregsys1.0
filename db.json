@@ -1,4 +1,3 @@
-
 {
   "sprint": [
     {
@@ -6,14 +5,19 @@
       "estimatedTime": 0,
       "timeSpend": 0,
       "completed": false,
-      "tasks": ["defaultTask"]
+      "tasks": [
+        "defaultTask"
+      ]
     },
     {
       "id": "Yes",
       "estimatedTime": 0,
       "timeSpend": 0,
       "completed": false,
-      "tasks": ["defaultTask","defaultTask1"]
+      "tasks": [
+        "defaultTask",
+        "defaultTask1"
+      ]
     },
     {
       "id": "ny sprint",
@@ -33,13 +37,73 @@
     {
       "id": "Kom i mål med denne sprint",
       "description": "Faa REST til at virke1",
-      "estimatedTime": 0,
+      "estimatedTime": 14,
+      "completed": true
+    },
+    {
+      "id": "379e1e24-886a-3010-e973-e0eeaaf6cefe",
+      "description": "At gøre det muligt at fjerne en task",
+      "estimatedTime": 20,
       "completed": false
     },
     {
-      "id": "defaultTask2",
-      "description": "Faa REST til at virke2",
-      "estimatedTime": 0,
+      "id": "e746698b-02eb-f4c6-4da4-960d9325735a",
+      "description": "Lav en præsentation",
+      "estimatedTime": 10,
+      "completed": false
+    },
+    {
+      "id": "fe5ade35-7718-91f9-18b3-54c03e9c9ba1",
+      "description": "Få Clemens til at kigge på koden",
+      "estimatedTime": 8,
+      "completed": false
+    },
+    {
+      "id": "57e893b9-ad2d-c0f3-fc07-f6eca0dfab10",
+      "description": "Et eller andet skrammel",
+      "estimatedTime": 1,
+      "completed": false
+    },
+    {
+      "id": "7856d602-df5c-8160-b5da-f27e444ae0e6",
+      "description": "nyt skrammel",
+      "estimatedTime": 1,
+      "completed": false
+    },
+    {
+      "id": "a19d7413-b2a5-feb5-d069-22542c231b41",
+      "description": "virker det?",
+      "estimatedTime": 1,
+      "completed": false
+    },
+    {
+      "id": "6e554512-aa15-973d-b9e0-0597872f3588",
+      "description": "nyt?",
+      "estimatedTime": 1,
+      "completed": false
+    },
+    {
+      "id": "652df362-2a48-9f9f-ab43-f9db663cfa28",
+      "description": "triple nyt",
+      "estimatedTime": 1,
+      "completed": false
+    },
+    {
+      "id": "69b5b249-ecda-a6ed-3e36-ff9b3ef61e7c",
+      "description": "Asger taber i bordfodbold",
+      "estimatedTime": 17,
+      "completed": false
+    },
+    {
+      "id": "64f5f620-9f21-9288-8781-8b882ff18959",
+      "description": "At gå i bredden",
+      "estimatedTime": 8,
+      "completed": false
+    },
+    {
+      "id": "2a57a464-5595-9546-4afe-2dd689dc1b89",
+      "description": "Gør noget, så lærer du noget",
+      "estimatedTime": 96,
       "completed": false
     }
   ]

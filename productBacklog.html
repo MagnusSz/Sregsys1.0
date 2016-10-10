@@ -39,18 +39,18 @@
   </section>
 
   <!--input-->
+  <div id="content">
+  <script id="main" type="text/ractive">
   <section class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <input class="col-lg-9 col-md-9 col-sm-9 col-xs-9" placeholder="Skriv en opgave her...">
-      </input>
-      <button class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3"> Tilføj </button>
+      <input class="col-lg-7 col-md-7 col-sm-7 col-xs-7" placeholder="Skriv en opgave her..." value="" id="opretInput"/>
+      <input class="col-lg-2 col-md-2 col-sm-2 col-xs-2" placeholder="Estimeret tid i minutter.." value="" id="opretTid" />
+      <button class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3" on-click="createTask"> Tilføj </button>
     </div>
   </section>
 
-  <!-- Aktive Tasks -->
   <section class="row">
-    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="content">
-      <script id="main" type="text/ractive">
+    <table class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <tr>
         <th> Vælg </th>
         <th> Beskrivelse </th>
@@ -59,31 +59,17 @@
       </tr>
       {{#tasks:i}}
       <tr>
-       <td> <form action="#"> <input type="checkbox" name="vælg"> </form> </td>
+       <td> <button class="btn btn-danger" style="margin:2px;" id="{{id}}" on-click="deleteTask"> slet </button> </td>
        <td> {{description}} </td>
-       <td> {{estimatedTime}} </td>
+       <td> {{estimatedTime}} minutter</td>
        <td> <select> <option value="Sprint 1"> Sprint 1 </option> <option value="Sprint 2"> Sprint 2 </option> </select> </td>
       </tr>
      {{/tasks}}
-     </script>
     </table>
   </section>
 
-  <!-- muligheder -->
-  <section class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <button class="btn btn-block btn-info"> Rediger </button>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-       <button class="btn btn-block btn-danger"> Slet </button>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <button class="btn btn-block btn-success"> Tilføj til Sprint </button>
-    </div>
-  </section>
   <hr>
-
-  <!-- Gennemførte opgaver -->
+<div id="content2">
   <section class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <h2> Gennemførte opgaver </h2>
@@ -96,18 +82,20 @@
         <th> Beskrivelse </th>
         <th> Hvilken Sprint </th>
       </tr>
+      {{#tasks:i}}
+        {{#if completed}}
       <tr>
-        <td> <form action="#"> <input type="checkbox" name="vælg" checked> </form> </td>
-        <td> Her kommer der beskrivelse af en opgave </td>
-        <td> Sprint 1 </select>
+        <td> <form action="#"> <input type="checkbox" name="vælg" checked disabled> </form> </td>
+        <td> {{description}}</td>
+        <td> Sprint 1 </td>
       </tr>
-      <tr>
-        <td> <form action="#"> <input type="checkbox" name="vælg" checked> </form> </td>
-        <td> Her kommer der beskrivelse af en opgave </td>
-        <td> Sprint 2 </select>
-      </tr>
+        {{/if}}
+      {{/tasks}}
     </table>
   </section>
+  </script>
+</div>
+
 </main>
 
 <script src="main.js" charset="utf-8"></script>

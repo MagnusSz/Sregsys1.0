@@ -5,7 +5,8 @@ Clemens Nylandsted Klokmose, 2016
 
 // Vi laver vores board manager objekt og hard-coder det til at peje på en json-server der kører lokalt på maskinen.
 var sprintManager = {
-    host: "http://localhost:3000"
+    host: "http://localhost:3000",
+    data: {}
 };
 
 // Get boards skaber et objekt med alle boards og alle deres tilknyttede noter.
@@ -16,6 +17,8 @@ sprintManager.getSprints = function(callback) {
     miniREST.get(sprintManager.host+"/sprint", function(sprints) {
         // Noter hentes ud når boards er hentet
         miniREST.get(sprintManager.host+"/task", function(tasks) {
+          sprintManager.data.sprints = sprints;
+          sprintManager.data.tasks = tasks;
           // Vi løber alle boards i gennem
           for (var i = 0; i<sprints.length; i++) {
             // Kopierer listen over board IDer ud i et array
@@ -66,10 +69,24 @@ sprintManager.getTask = function(id, callback) {
 };
 
 // Tilføjer en note til serveren. Her sørger boardmanager for at give noten et unikt id
-sprintManager.addTask = function(sprint, task) {
+sprintManager.addTask = function(task) {
     task.id = sprintManager.createGuid();
     miniREST.post(sprintManager.host+"/task", task);
-    this.addTaskToSprint(sprint, task);
+    sprintManager.data.tasks.push(task);
+    ractive.set("tasks", sprintManager.data.tasks);
+};
+
+sprintManager.deleteTask = function(task) {
+  for(var i = 0; i < sprintManager.data.tasks.length; i++){
+      if (task === sprintManager.data.tasks[i].id){
+        var index = sprintManager.data.tasks.indexOf(sprintManager.data.tasks[i]);
+        sprintManager.data.tasks.splice(index, 1);
+      }
+  }
+  console.log("Utrolige ting er sket");
+   ractive.set("tasks", sprintManager.data.tasks);
+   miniREST.delete(sprintManager.host + "/task/" + task);
+   console.log("happy ending");
 };
 
 // Updaterer en note med nu data
